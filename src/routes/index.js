@@ -1,5 +1,6 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Switch } from 'react-router-dom';
+import Route from './Route';
 
 import SignIn from '../pages/SingIn';
 import SignUp from '../pages/SingUp';
@@ -17,8 +18,8 @@ export default function Routes() {
       <Route path="/restore" component={RestoreAccount} />
       <Route path="/restore/confirm" component={RestoreConfirm} />
 
-      <Route path="/profile" component={Profile} />
-      <Route path="/repository" component={Repository} />
+      <Route path="/profile" component={Profile} isPrivate />
+      <Route path="/repository" component={Repository} isPrivate />
     </Switch>
   );
 }
