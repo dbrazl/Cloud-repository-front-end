@@ -4,4 +4,5 @@ A app like Google Drive or DropBox to upload and download archives. It's fully d
 ## Tech's
 - **React.js** : is a library to create User Interface.
 - **React Router Dom** : is a library to create navegation on front-end.
+- **History** : aux React Router Dom in navegation routes.
 - more is comming...

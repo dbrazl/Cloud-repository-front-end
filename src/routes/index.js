@@ -7,8 +7,8 @@ import SignUp from '../pages/SingUp';
 import RestoreAccount from '../pages/RestoreAccount';
 import RestoreConfirm from '../pages/RestoreCofirm';
 
-import Profile from '../pages/Profile';
-import Repository from '../pages/Repository';
+import Profile from '~/pages/Profile';
+import Repository from '~/pages/Repository';
 
 export default function Routes() {
   return (

@@ -33,4 +33,11 @@ module.exports = {
     'import/prefer-default-export': 'off',
     'no-console': ["error", { allow: ["tron", "log"] }]
   },
+  settings: {
+    "import/resolver": {
+      "babel-plugin-root-import": {
+        rootPathSuffix: "src",
+      },
+    },
+  },
 };
