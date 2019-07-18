@@ -16,11 +16,8 @@ export default function RestoreAccount() {
   });
 
   function handleSubmit(data) {
-    console.tron.log(data);
-  }
-
-  function handleConfirmRedirect() {
     setRestoreConfirm({ redirect: true });
+    console.tron.log(data);
   }
 
   return (
@@ -30,7 +27,7 @@ export default function RestoreAccount() {
       <Form schema={schema} onSubmit={handleSubmit}>
         <Input name="email" type="text" placeholder="Informe seu email." />
 
-        <button type="submit" id="restore" onClick={handleConfirmRedirect}>
+        <button type="submit" id="restore">
           Recuperar
         </button>
         <Link to="/">Voltar</Link>
