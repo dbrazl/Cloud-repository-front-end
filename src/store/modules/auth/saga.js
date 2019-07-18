@@ -18,6 +18,8 @@ export function* singIn({ payload }) {
 
     const { token, user } = response.data;
 
+    api.defaults.headers.Authorization = `Bearer ${token}`;
+
     yield put(signInSucess(token, user));
 
     history.push('/repository');
@@ -39,12 +41,23 @@ export function* signUp({ payload }) {
 
     history.push('/');
   } catch (err) {
-    toast.error('Falaha no cadastro! Verifique seus dados.');
+    toast.error('Falha no cadastro! Verifique seus dados.');
     yield put(signFailure());
   }
 }
 
+export function setToken({ payload }) {
+  if (!payload) return;
+
+  const { token } = payload;
+
+  if (token) {
+    api.defaults.headers.Authorization = `Bearer ${token}`;
+  }
+}
+
 export default all([
+  takeLatest('persist/REHYDRATE', setToken),
   takeLatest('@auth/SIGN_IN_REQUEST', singIn),
   takeLatest('@auth/SIGN_UP_REQUEST', signUp),
 ]);
