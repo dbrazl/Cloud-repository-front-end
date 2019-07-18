@@ -1,23 +1,23 @@
-import React, { useState } from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import { Input, Form } from '@rocketseat/unform';
 import * as Yup from 'yup';
+import { useDispatch } from 'react-redux';
 import restore from '~/assets/restore.svg';
 
-export default function RestoreAccount() {
-  const [restoreConfirm, setRestoreConfirm] = useState({
-    redirect: false,
-  });
+import { restoreAccountRequest } from '~/store/modules/auth/actions';
 
+export default function RestoreAccount() {
   const schema = Yup.object().shape({
     email: Yup.string()
       .email()
       .required('O e-mail é obrigatório'),
   });
 
-  function handleSubmit(data) {
-    setRestoreConfirm({ redirect: true });
-    console.tron.log(data);
+  const dispatch = useDispatch();
+
+  function handleSubmit({ email }) {
+    dispatch(restoreAccountRequest(email));
   }
 
   return (
@@ -32,8 +32,6 @@ export default function RestoreAccount() {
         </button>
         <Link to="/">Voltar</Link>
       </Form>
-
-      {restoreConfirm.redirect && <Redirect to="/restore/confirm" />}
     </>
   );
 }

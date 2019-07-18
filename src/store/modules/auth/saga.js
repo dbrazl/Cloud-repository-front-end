@@ -56,8 +56,25 @@ export function setToken({ payload }) {
   }
 }
 
+export function* restoreAccount({ payload }) {
+  try {
+    const { email } = payload;
+
+    yield call(api.put, 'restore', {
+      email,
+    });
+
+    history.push('/restore/confirm');
+  } catch (err) {
+    toast.error(
+      'Falha no envio de e-mail! Verifique se o e-mail está correto!'
+    );
+  }
+}
+
 export default all([
   takeLatest('persist/REHYDRATE', setToken),
   takeLatest('@auth/SIGN_IN_REQUEST', singIn),
   takeLatest('@auth/SIGN_UP_REQUEST', signUp),
+  takeLatest('@auth/RESTORE_ACCOUNT', restoreAccount),
 ]);

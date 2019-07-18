@@ -24,3 +24,10 @@ export function signFailure() {
     type: '@auth/SIGN_FAILURE',
   };
 }
+
+export function restoreAccountRequest(email) {
+  return {
+    type: '@auth/RESTORE_ACCOUNT',
+    payload: { email },
+  };
+}
