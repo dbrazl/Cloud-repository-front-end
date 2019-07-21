@@ -1,7 +1,13 @@
 import React from 'react';
 
-// import { Container } from './styles';
+import { Container } from './styles';
 
 export default function Repository() {
-  return <h1>Repository</h1>;
+  return (
+    <Container>
+      <div>
+        <button type="button">Adicionar arquivo</button>
+      </div>
+    </Container>
+  );
 }

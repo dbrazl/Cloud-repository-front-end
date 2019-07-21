@@ -37,13 +37,14 @@ export const Container = styled.div`
     input {
       height: 44px;
       width: 200px;
-      border-width: 0;
-      border-bottom: 1px solid #000;
+      background: #eee;
+      border: none;
+      border-radius: 5px;
       text-align: center;
       margin-top: 20px;
 
-      &::placeholder {
-        color: #000;
+      &:focus {
+        border: 1px solid #2a77ff;
       }
     }
 
@@ -67,19 +68,34 @@ export const Container = styled.div`
       }
     }
 
-    #singin:hover {
+    #singin {
       background: #5fd38d;
       color: #fff;
+      transition: background 0.2s;
+
+      &:hover {
+        background: ${darken(0.08, '#5fd38d')};
+      }
     }
 
-    #singup:hover {
+    #singup {
       background: #ff5555;
       color: #fff;
+      transition: background 0.2s;
+
+      &:hover {
+        background: ${darken(0.08, '#ff5555')};
+      }
     }
 
-    #restore:hover {
+    #restore {
       background: #2a77ff;
       color: #fff;
+      transition: background 0.2s;
+
+      &:hover {
+        background: ${darken(0.08, '#2a77ff')};
+      }
     }
 
     a {
