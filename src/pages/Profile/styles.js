@@ -24,15 +24,6 @@ export const BoxContainer = styled.div`
   justify-content: center;
   flex-direction: column;
 
-  img {
-    width: 100px;
-    height: 100px;
-    background: #eee;
-    border-radius: 50%;
-
-    text-align: center;
-  }
-
   a {
     margin-bottom: 50px;
     display: flex;
@@ -44,8 +35,6 @@ export const BoxContainer = styled.div`
   }
 
   form {
-    margin-top: 20px;
-
     display: flex;
     align-items: center;
     justify-content: center;

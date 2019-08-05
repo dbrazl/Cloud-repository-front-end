@@ -1,13 +1,15 @@
 import React from 'react';
 
 import { Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Container, ProfileMenu } from './styles';
 
 import { signOut } from '~/store/modules/auth/actions';
 
 export default function Header() {
   const dispatch = useDispatch();
+
+  const avatar = useSelector(state => state.user.profile.avatar.url);
 
   function handleSignOut() {
     dispatch(signOut());
@@ -17,7 +19,10 @@ export default function Header() {
     <Container>
       <header>
         <ProfileMenu>
-          <img src="" alt="Foto de perfil" />
+          <img
+            src={avatar || 'http://localhost:80/file/profile-empty.png'}
+            alt="Foto de perfil"
+          />
           <Link to="/profile" id="profile">
             Nome
           </Link>

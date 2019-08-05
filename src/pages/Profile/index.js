@@ -12,6 +12,7 @@ import {
   Modal,
   ModalContainer,
 } from './styles';
+import AvatarInput from '~/components/AvatarInput';
 
 import { updateProfileRequest } from '~/store/modules/user/actions';
 
@@ -52,10 +53,10 @@ export default function Profile() {
   }
 
   function handleSubmit(data) {
-    const { name, email, oldPassword } = data;
+    const { name, email, avatar_id, oldPassword } = data;
 
     const completData = Object.assign(
-      { name, email },
+      { name, email, avatar_id },
       oldPassword ? { password, oldPassword } : {}
     );
 
@@ -69,9 +70,10 @@ export default function Profile() {
           <MdNavigateBefore />
           Voltar ao repositório
         </Link>
-        <img src="" alt="Foto de perfil" />
 
         <Form initialData={profile} onSubmit={handleSubmit}>
+          <AvatarInput name="avatar_id" />
+
           <div>
             <Input name="name" type="text" id="name" placeholder="Nome" />
             <FaEdit />

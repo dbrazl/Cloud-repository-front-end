@@ -3,8 +3,10 @@ A app like Google Drive or DropBox to upload and download archives. It's fully d
 
 ## Tech's
 - **React.js** : is a library to create User Interface.
+- **Styled Components** : is a library to create styled components with JS.
 - **React Router Dom** : is a library to create navegation on front-end.
 - **History** : aux React Router Dom in navegation routes.
+- **Axios** : is a library to cosume REST API.
 - **Unform** : library to create perfomatic form's.
 - **React Hooks** : a new way to handle states on components in React.
 - **Yup** : a schema validation library to use in form validation (in this case).
