@@ -5,6 +5,7 @@ import { FaEdit } from 'react-icons/fa';
 import { MdNavigateBefore, MdDeleteForever } from 'react-icons/md';
 import { Form, Input } from '@rocketseat/unform';
 import { useSelector, useDispatch } from 'react-redux';
+import api from '~/services/api';
 import {
   Container,
   BoxContainer,
@@ -15,6 +16,7 @@ import {
 import AvatarInput from '~/components/AvatarInput';
 
 import { updateProfileRequest } from '~/store/modules/user/actions';
+import { signOut } from '~/store/modules/auth/actions';
 
 export default function Profile() {
   const [password, setPassword] = useState({
@@ -50,6 +52,12 @@ export default function Profile() {
     if (e.target.id === 'cancel') {
       setModal(false);
     }
+  }
+
+  async function handleDelete() {
+    dispatch(signOut());
+
+    await api.delete('users');
   }
 
   function handleSubmit(data) {
@@ -114,7 +122,7 @@ export default function Profile() {
             arquivos na nuvem seram excluidos permanentemente!
           </p>
           <div>
-            <button type="button" id="confirm">
+            <button type="button" id="confirm" onClick={handleDelete}>
               <MdDeleteForever />
               Confirmar
             </button>

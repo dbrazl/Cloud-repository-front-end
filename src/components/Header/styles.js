@@ -24,7 +24,7 @@ export const Container = styled.div`
     height: 36px;
     width: 100px;
     padding: 0 10px;
-    border: 2px solid #ff5555;
+    border: 1px solid #ff5555;
     border-radius: 5px;
     color: #ff5555;
     transition: background 0.2s;
