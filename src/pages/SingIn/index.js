@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom';
 import { Form, Input } from '@rocketseat/unform';
 import * as Yup from 'yup';
-import logo from '~/assets/logo.svg';
+
+import arrows from '~/assets/arrows.svg';
+import sync from '~/assets/sync.svg';
+
+import { Logo } from './styles';
 
 import { signInRequest } from '~/store/modules/auth/actions';
 
@@ -11,6 +15,8 @@ export default function SingIn() {
   const [singUp, setSingUp] = useState({
     redirect: false,
   });
+
+  const loading = useSelector(state => state.auth.loading);
 
   const schema = Yup.object().shape({
     email: Yup.string()
@@ -31,7 +37,9 @@ export default function SingIn() {
 
   return (
     <>
-      <img src={logo} alt="Logo" />
+      <Logo loading={loading}>
+        <img src={loading ? sync : arrows} alt="" />
+      </Logo>
 
       <Form schema={schema} onSubmit={handleSubmit}>
         <Input name="email" type="text" placeholder="Informe seu email" />

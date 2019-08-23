@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import { darken } from 'polished';
 
 export const Wrapper = styled.div`
-  background: #fdfdfd;
   height: 100%;
 
   display: flex;
@@ -13,6 +12,7 @@ export const Wrapper = styled.div`
 export const Container = styled.div`
   width: 450px;
   height: 600px;
+  background: #fff;
   border: 1px solid #eee;
   border-radius: 10px;
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);

@@ -9,22 +9,26 @@ import { signOut } from '~/store/modules/auth/actions';
 export default function Header() {
   const dispatch = useDispatch();
 
-  const avatar = useSelector(state => state.user.profile.avatar.url);
+  const profile = useSelector(state => state.user.profile);
 
   function handleSignOut() {
     dispatch(signOut());
   }
+
+  const [name] = profile.name.split(' ');
 
   return (
     <Container>
       <header>
         <ProfileMenu>
           <img
-            src={avatar || 'http://localhost:80/file/profile-empty.png'}
+            src={
+              profile.avatar.url || 'http://localhost:80/file/profile-empty.png'
+            }
             alt="Foto de perfil"
           />
           <Link to="/profile" id="profile">
-            Nome
+            {name}
           </Link>
           <Link to="/repository" id="repository">
             REPOSITORY

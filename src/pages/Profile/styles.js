@@ -5,7 +5,6 @@ export const Container = styled.div`
   margin: 0 auto;
   min-width: 80%;
   height: 100%;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -18,6 +17,8 @@ export const BoxContainer = styled.div`
   border-radius: 5px;
   background: #fff;
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  margin-top: 230px;
+  margin-bottom: 50px;
 
   display: flex;
   align-items: center;

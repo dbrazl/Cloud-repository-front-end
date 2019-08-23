@@ -1,6 +1,9 @@
 import { createGlobalStyle } from 'styled-components';
 
 import 'react-toastify/dist/ReactToastify.css';
+import 'react-circular-progressbar/dist/styles.css';
+// import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
+import 'react-perfect-scrollbar/dist/css/styles.css';
 
 export default createGlobalStyle`
 
@@ -19,6 +22,7 @@ export default createGlobalStyle`
 
   html, body, #root {
     height: 100%;
+    background: #f0f0f0;
   }
 
   body {

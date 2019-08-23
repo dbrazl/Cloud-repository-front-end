@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="50" height="50" viewBox="0 0 50 50">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Retângulo_9" data-name="Retângulo 9" width="50" height="50" transform="translate(87 361)" fill="#fff" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="Grupo_de_máscara_4" data-name="Grupo de máscara 4" transform="translate(-87 -361)" clip-path="url(#clip-path)">
+    <path id="music-solid" d="M50,3.126A3.123,3.123,0,0,0,45.936.146L14.687,9.375A3.124,3.124,0,0,0,12.5,12.353V37.882A13.509,13.509,0,0,0,9.375,37.5C4.2,37.5,0,40.3,0,43.749S4.2,50,9.375,50s9.375-2.8,9.375-6.25V20.928l25-7.326v18.03a13.509,13.509,0,0,0-3.125-.383c-5.178,0-9.375,2.8-9.375,6.25s4.2,6.25,9.375,6.25S50,40.951,50,37.5V3.126Z" transform="translate(87 361.001)" fill="#242f41"/>
+  </g>
+</svg>

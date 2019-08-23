@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="50" height="50" viewBox="0 0 50 50">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Retângulo_9" data-name="Retângulo 9" width="50" height="50" transform="translate(87 361)" fill="#fff" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="Grupo_de_máscara_3" data-name="Grupo de máscara 3" transform="translate(-87 -361)" clip-path="url(#clip-path)">
+    <path id="image-regular" d="M45.313,6.25H4.688A4.687,4.687,0,0,0,0,10.938V39.063A4.687,4.687,0,0,0,4.688,43.75H45.313A4.687,4.687,0,0,0,50,39.063V10.938A4.687,4.687,0,0,0,45.313,6.25Zm-.586,32.813H5.273a.586.586,0,0,1-.586-.586V11.523a.586.586,0,0,1,.586-.586H44.727a.586.586,0,0,1,.586.586V38.477a.586.586,0,0,1-.586.586ZM12.5,14.844a3.906,3.906,0,1,0,3.906,3.906A3.906,3.906,0,0,0,12.5,14.844ZM9.375,34.375h31.25V26.563l-8.546-8.546a1.172,1.172,0,0,0-1.657,0L18.75,29.688l-3.859-3.859a1.172,1.172,0,0,0-1.657,0L9.375,29.688Z" transform="translate(87 361)" fill="#f5443e"/>
+  </g>
+</svg>

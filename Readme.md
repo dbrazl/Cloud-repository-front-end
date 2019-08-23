@@ -16,9 +16,6 @@ A app like Google Drive or DropBox to upload and download archives. It's fully d
 - more is comming...
 
 ## Backlog to implement
-- Upload of archives
-- Download of archives
-- Open archives in Browser
 - Rename archives
 - Delete archives
 - Mobile version with React Native

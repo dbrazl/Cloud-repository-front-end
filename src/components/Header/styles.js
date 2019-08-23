@@ -8,6 +8,9 @@ export const Container = styled.div`
 
   display: flex;
   align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
 
   header {
     min-width: 80%;
@@ -50,6 +53,7 @@ export const ProfileMenu = styled.div`
     border-radius: 50%;
     background: #eee;
     margin-right: 10px;
+    cursor: default;
 
     font-size: 10px;
     text-align: center;
@@ -60,7 +64,7 @@ export const ProfileMenu = styled.div`
     padding-top: 5px;
     height: 30px;
     border-right: 1px solid #000;
-    font-size: 14px;
+    font-size: 16px;
 
     &:hover {
       color: #2a77ff;
