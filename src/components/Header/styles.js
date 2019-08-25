@@ -53,7 +53,7 @@ export const ProfileMenu = styled.div`
     border-radius: 50%;
     background: #eee;
     margin-right: 10px;
-    cursor: default;
+    cursor: pointer;
 
     font-size: 10px;
     text-align: center;

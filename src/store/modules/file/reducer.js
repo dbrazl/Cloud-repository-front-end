@@ -3,6 +3,7 @@ import produce from 'immer';
 const INITIAL_STATE = {
   uploaded: [],
   sucessed: [],
+  files: [],
 };
 
 export default function file(state = INITIAL_STATE, action) {
@@ -18,6 +19,7 @@ export default function file(state = INITIAL_STATE, action) {
         });
         break;
       }
+
       case '@file/UPLOAD_SUCESS': {
         draft.sucessed = draft.sucessed.concat(action.payload);
 
@@ -33,6 +35,7 @@ export default function file(state = INITIAL_STATE, action) {
         });
         break;
       }
+
       case '@file/UPLOAD_FAILURE': {
         draft.uploaded.forEach(uploaded => {
           uploaded.error = true;
@@ -40,12 +43,18 @@ export default function file(state = INITIAL_STATE, action) {
         });
         break;
       }
+
       case '@file/UPDATE_PROGRESSBAR': {
         draft.uploaded.forEach(element => {
           if (element.id === action.payload.id) {
             element.progress = action.payload.progress;
           }
         });
+        break;
+      }
+
+      case '@file/UPDATE_LIST_OF_FILES': {
+        draft.files = action.payload.files;
         break;
       }
       default:

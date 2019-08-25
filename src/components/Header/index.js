@@ -21,12 +21,15 @@ export default function Header() {
     <Container>
       <header>
         <ProfileMenu>
-          <img
-            src={
-              profile.avatar.url || 'http://localhost:80/file/profile-empty.png'
-            }
-            alt="Foto de perfil"
-          />
+          <Link to="/profile">
+            <img
+              src={
+                profile.avatar.url ||
+                'http://localhost:80/file/profile-empty.png'
+              }
+              alt="Foto de perfil"
+            />
+          </Link>
           <Link to="/profile" id="profile">
             {name}
           </Link>

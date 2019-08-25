@@ -40,8 +40,11 @@ export function* signUp({ payload }) {
     });
 
     history.push('/');
+    toast.success('Cadastro efetuado!');
   } catch (err) {
-    toast.error('Falha no cadastro! Verifique seus dados.');
+    toast.error(
+      'Falha no cadastro! Usuário existente ou os dados estão incorretos.'
+    );
     yield put(signFailure());
   }
 }
@@ -65,6 +68,7 @@ export function* restoreAccount({ payload }) {
     });
 
     history.push('/restore/confirm');
+    toast.success('Senha redefinida');
   } catch (err) {
     toast.error(
       'Falha no envio de e-mail! Verifique se o e-mail está correto!'

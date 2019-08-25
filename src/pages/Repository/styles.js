@@ -16,7 +16,6 @@ export const Container = styled.div`
     width: 970px;
     height: 430px;
     margin-right: 20px;
-    margin-bottom: 180px;
 
     li {
       width: 300px;

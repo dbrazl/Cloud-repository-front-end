@@ -24,3 +24,10 @@ export function updateProgressBar(id, progress) {
     payload: { id, progress },
   };
 }
+
+export function updateListOfFiles(files) {
+  return {
+    type: '@file/UPDATE_LIST_OF_FILES',
+    payload: { files },
+  };
+}

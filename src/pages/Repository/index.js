@@ -5,13 +5,14 @@ import PerfectScrollbar from 'react-perfect-scrollbar';
 
 import { uniqueId } from 'lodash';
 import filesize from 'filesize';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import {
   fileUploadRequest,
   fileUploadSucess,
   fileUploadFailure,
   updateProgressBar,
+  updateListOfFiles,
 } from '~/store/modules/file/actions';
 
 import word from '~/assets/word.svg';
@@ -31,9 +32,11 @@ import api from '~/services/api';
 
 export default function Repository() {
   const dispatch = useDispatch();
-  // const sucessed = useSelector(state => state.file.sucessed);
 
-  const [list, setList] = useState([]);
+  // const sucessed = useSelector(state => state.file.sucessed);
+  const filesOfOwner = useSelector(state => state.file.files);
+
+  // // const [list, setList] = useState([]);
   const [modal, setModal] = useState({
     display: false,
     mouseX: 0,
@@ -46,11 +49,16 @@ export default function Repository() {
     async function findArchives() {
       const response = await api.get('file');
 
-      setList(response.data);
+      dispatch(updateListOfFiles(response.data));
     }
 
     findArchives();
+    console.log(filesOfOwner);
   }, []);
+
+  /* Update point. When uploadToServer run, the dispatch will called twice.
+  But the component ArchiveMenu change the state of filesOfOwner too and the
+  useEffet({},[filesOfOwner]) is necessary. How to fix that? */
 
   /** Error: Only atualize when second archive is uploaded */
   //
@@ -86,7 +94,7 @@ export default function Repository() {
 
       // Will remove when React Hook problem is resolved
       const files = await api.get('file');
-      setList(files.data);
+      dispatch(updateListOfFiles(files.data));
     } catch (err) {
       await dispatch(fileUploadFailure());
     }
@@ -165,6 +173,15 @@ export default function Repository() {
     }
   }
 
+  function hideModalByChild() {
+    setModal({
+      display: false,
+      mouseX: modal.mouseX,
+      mouseY: modal.mouseY,
+      file: modal.file,
+    });
+  }
+
   return (
     <>
       <Dropzone onDropAccepted={handleUpload} noKeyboard noClick>
@@ -176,10 +193,11 @@ export default function Repository() {
             id="workbench"
           >
             <input {...getInputProps()} />
+
             <Container id="workbench">
               <ul id="workbench">
                 <PerfectScrollbar>
-                  {list.map(file => {
+                  {filesOfOwner.map(file => {
                     const [name] = file.name.split('.');
 
                     return (
@@ -195,12 +213,14 @@ export default function Repository() {
 
                 {modal.display && (
                   <ArchiveMenu
+                    id={modal.file.id}
                     name={modal.file.name}
                     positionX={modal.mouseX}
                     positionY={modal.mouseY}
                     url={modal.file.url}
                     path={modal.file.path}
                     type={modal.file.type}
+                    hideModalArchiveMenu={hideModalByChild}
                   />
                 )}
               </ul>
